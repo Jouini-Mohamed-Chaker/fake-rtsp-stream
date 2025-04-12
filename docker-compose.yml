@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  rtsp-streamer:
+    build: .
+    ports:
+      - "8555:8554" # Map container's 8554 port to host's 8555
+    volumes:
+      - ./input.mp4:/app/input.mp4
+    restart: unless-stopped
